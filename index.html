@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalkulator Bangun Ruang</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <i class="fas fa-cube header-icon"></i>
+      <div>
+        <h1>Kalkulator Bangun Ruang</h1>
+        <p>Hitung Volume &amp; Luas Permukaan dengan mudah</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- PILIH BANGUN -->
+    <section class="card selector-card">
+      <h2><i class="fas fa-shapes"></i> Pilih Bangun Ruang</h2>
+      <div class="shape-grid">
+        <button class="shape-btn active" data-shape="kubus">
+          <i class="fas fa-cube"></i>
+          <span>Kubus</span>
+        </button>
+        <button class="shape-btn" data-shape="balok">
+          <i class="fas fa-box"></i>
+          <span>Balok</span>
+        </button>
+        <button class="shape-btn" data-shape="bola">
+          <i class="fas fa-circle"></i>
+          <span>Bola</span>
+        </button>
+        <button class="shape-btn" data-shape="tabung">
+          <i class="fas fa-database"></i>
+          <span>Tabung</span>
+        </button>
+        <button class="shape-btn" data-shape="kerucut">
+          <i class="fas fa-mountain"></i>
+          <span>Kerucut</span>
+        </button>
+        <button class="shape-btn" data-shape="limas_persegi">
+          <i class="fas fa-play"></i>
+          <span>Limas Persegi</span>
+        </button>
+        <button class="shape-btn" data-shape="prisma_segitiga">
+          <i class="fas fa-prism"></i>
+          <span>Prisma Segitiga</span>
+        </button>
+        <button class="shape-btn" data-shape="ellipsoid">
+          <i class="fas fa-egg"></i>
+          <span>Ellipsoid</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- FORM INPUT -->
+    <section class="card form-card">
+      <div class="shape-display" id="shape-display">
+        <div class="shape-visual" id="shape-visual">
+          <i class="fas fa-cube"></i>
+        </div>
+        <div class="shape-info">
+          <h3 id="shape-title">Kubus</h3>
+          <p id="shape-desc">Bangun ruang dengan 6 sisi persegi yang sama besar.</p>
+          <div class="shape-formula" id="shape-formula">
+            <span>Volume: s³</span>
+            <span>Luas Permukaan: 6 × s²</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2><i class="fas fa-keyboard"></i> Masukkan Ukuran</h2>
+      <div class="input-area" id="input-area">
+        <!-- Diisi oleh jQuery -->
+      </div>
+
+      <!-- LIVE PREVIEW -->
+      <div class="live-preview" id="live-preview" style="display:none;">
+        <div class="lp-label"><i class="fas fa-bolt"></i> Pratinjau Real-time</div>
+        <div class="lp-values">
+          <span class="lp-vol">Volume: <strong id="lp-vol-val">—</strong> cm³</span>
+          <span class="lp-luas">Luas: <strong id="lp-luas-val">—</strong> cm²</span>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" id="btn-hitung">
+          <i class="fas fa-calculator"></i> Hitung
+        </button>
+        <button class="btn btn-secondary" id="btn-reset">
+          <i class="fas fa-redo"></i> Reset
+        </button>
+      </div>
+    </section>
+
+    <!-- HASIL -->
+    <section class="card result-card" id="result-card">
+      <h2><i class="fas fa-poll"></i> Hasil Perhitungan</h2>
+      <div class="result-content" id="result-content">
+        <p class="result-placeholder">Masukkan ukuran dan klik <strong>Hitung</strong> untuk melihat hasil.</p>
+      </div>
+    </section>
+
+    <!-- RIWAYAT -->
+    <section class="card history-card" id="history-card">
+      <div class="history-header">
+        <h2><i class="fas fa-history"></i> Riwayat Perhitungan</h2>
+        <button class="btn-clear" id="btn-clear"><i class="fas fa-trash"></i> Hapus Semua</button>
+      </div>
+      <div class="history-list" id="history-list">
+        <p class="result-placeholder">Belum ada riwayat perhitungan.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Kalkulator Bangun Ruang &mdash; Dibuat dengan HTML, CSS &amp; jQuery</p>
+  </footer>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
